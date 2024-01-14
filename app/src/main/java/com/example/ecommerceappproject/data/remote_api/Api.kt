@@ -6,6 +6,7 @@ import com.example.ecommerceappproject.data.model.request.PayCashRequest
 import com.example.ecommerceappproject.data.model.request.SignUpRequest
 import com.example.ecommerceappproject.data.model.request.UpdateCartRequest
 import com.example.ecommerceappproject.data.model.response.CartResponse
+import com.example.ecommerceappproject.data.model.response.CategoryResponse
 import com.example.ecommerceappproject.data.model.response.DetailProductResponse
 import com.example.ecommerceappproject.data.model.response.LoginRemoteResponse
 import com.example.ecommerceappproject.data.model.response.Message
@@ -53,6 +54,14 @@ interface Api {
 
     @GET("order")
     suspend fun getAllOrders(): Response<OrderResponse>
+
+    @GET("catalog")
+    suspend fun getAllCategory(
+        @Query("page") page: Int?,
+        @Query("limit") limit: Int?,
+        @Query("keyword") keyword: String?,
+        @Query("sort") sort: String?,
+    ): Response<CategoryResponse>
 
     @POST("auth/register")
     suspend fun signUp(@Body request: SignUpRequest): Response<RegisterMessageResponse>

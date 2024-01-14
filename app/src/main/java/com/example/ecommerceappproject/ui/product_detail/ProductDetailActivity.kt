@@ -33,7 +33,9 @@ class ProductDetailActivity : AppCompatActivity() {
 
     private fun initListener() {
         with(binding) {
-
+            buy.setOnClickListener {
+                viewModel.buyNow(AddToCartRequest(data.toLong(), 1))
+            }
             addIntoCart.setOnClickListener {
                 viewModel.addToCart(AddToCartRequest(data.toLong(), 1))
             }
@@ -50,6 +52,11 @@ class ProductDetailActivity : AppCompatActivity() {
     }
 
     private fun observerLiveData() {
+        viewModel.buyNowResponse.observe(this@ProductDetailActivity){
+            if(it){
+                startActivity(Intent(this@ProductDetailActivity, CartActivity::class.java))
+            }
+        }
         viewModel.productDetailResponse.observe(this@ProductDetailActivity) {
             with(binding) {
                 nameProduct.text = it.name
@@ -59,7 +66,6 @@ class ProductDetailActivity : AppCompatActivity() {
                 list = it.images
                 adapter = ProductImageAdapter(this@ProductDetailActivity, list)
                 rcvImageItem.adapter = adapter
-               // numberOfProductsInCart = dataManager.getInt(NUMBER_OF_PRODUCTS_IN_CART)
                 tvNumberProduct.text = numberOfProductsInCart.toString()
             }
         }
@@ -72,7 +78,6 @@ class ProductDetailActivity : AppCompatActivity() {
                 ).show()
                 numberOfProductsInCart += 1
                 binding.tvNumberProduct.text = numberOfProductsInCart.toString()
-                //dataManager.save(NUMBER_OF_PRODUCTS_IN_CART, numberOfProductsInCart)
             } else {
                 Toast.makeText(
                     this@ProductDetailActivity,

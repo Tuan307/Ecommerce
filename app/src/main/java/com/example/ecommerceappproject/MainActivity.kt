@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity(),
         mPagerAdapter.addFragment(homeFragment)
         mPagerAdapter.addFragment(orderFragment)
         binding.viewContainer.adapter = mPagerAdapter
+        binding.viewContainer.isUserInputEnabled = false
         binding.viewContainer.offscreenPageLimit = mPagerAdapter.itemCount
     }
 

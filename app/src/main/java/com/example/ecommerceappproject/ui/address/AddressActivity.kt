@@ -8,8 +8,10 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.ecommerceappproject.MainActivity
 import com.example.ecommerceappproject.R
 import com.example.ecommerceappproject.data.model.Cart
+import com.example.ecommerceappproject.data.model.request.AddToCartRequest
 import com.example.ecommerceappproject.data.model.request.PayCashRequest
 import com.example.ecommerceappproject.data.model.request.ProductInfo
+import com.example.ecommerceappproject.data.model.request.UpdateCartRequest
 import com.example.ecommerceappproject.databinding.ActivityAddressBinding
 
 class AddressActivity : AppCompatActivity() {
@@ -59,6 +61,13 @@ class AddressActivity : AppCompatActivity() {
     private fun observerLiveData() {
         viewModel.checkPayCash.observe(this@AddressActivity) {
             if (it.message) {
+                val updateList = arrayListOf<AddToCartRequest>()
+                updateList.add(
+                    AddToCartRequest(
+                        0, 0
+                    )
+                )
+                viewModel.clearCart(UpdateCartRequest(updateList))
                 val intent = Intent(this@AddressActivity, MainActivity::class.java)
                 startActivity(intent)
                 finish()

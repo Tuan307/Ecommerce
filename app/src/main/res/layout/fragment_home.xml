@@ -7,7 +7,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.main.fragment.home.HomeFragment">
+        tools:context=".ui.main.home.HomeFragment">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/appBarHome"
@@ -17,39 +17,96 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Chào bạn"
-                android:textColor="@color/black"
-                android:textSize="@dimen/sp20"
-                android:textStyle="bold" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:layout_marginEnd="@dimen/dp20">
-
-                <ImageView
-                    android:id="@+id/imgCart"
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_cart" />
+                    android:text="Chào bạn"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp20"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <ImageView
+                    android:id="@+id/imgLogout"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/rlcart"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="@dimen/dp20"
+                    android:src="@drawable/logout" />
+                <RelativeLayout
+                    android:id="@+id/rlcart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="@dimen/dp20"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/tvNumberProduct"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_marginStart="@dimen/dp15"
-                    android:background="@drawable/bg_text_view_number_product"
-                    android:gravity="center"
-                    android:textColor="@color/white"
-                    android:visibility="gone"
-                    tools:text="2" />
-            </RelativeLayout>
+                    <ImageView
+                        android:id="@+id/imgCart"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_cart" />
 
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvNumberProduct"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="@dimen/dp15"
+                        android:background="@drawable/bg_text_view_number_product"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:visibility="gone"
+                        tools:text="2" />
+                </RelativeLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.appcompat.widget.Toolbar>
+
+        <LinearLayout
+            android:id="@+id/linear_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp12"
+            android:layout_marginTop="@dimen/dp16"
+            android:background="@drawable/custom_search"
+            android:backgroundTint="@color/color_gray"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="@dimen/dp12"
+            app:layout_constraintTop_toBottomOf="@+id/appBarHome">
+
+            <ImageView
+                android:id="@+id/imgSearch"
+                android:layout_width="@dimen/dp24"
+                android:layout_height="@dimen/dp24"
+                android:backgroundTint="@color/color_search_text"
+                android:src="@drawable/ic_search"
+                app:tint="@color/color_message_content" />
+
+            <EditText
+                android:id="@+id/edtSearch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp10"
+                android:background="@android:color/transparent"
+                android:hint="Tìm kiếm"
+                android:minHeight="28dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/color_search_text" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list_of_category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp12"
+            app:layout_constraintTop_toBottomOf="@+id/linear_search" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/list_of_products"
@@ -59,6 +116,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/appBarHome" />
+            app:layout_constraintTop_toBottomOf="@+id/list_of_category" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -10,6 +10,7 @@ object ApiService {
     private const val URL =
         "https://pc-shop-backend-git-doquang227-dev.apps.sandbox-m3.1530.p1.openshiftapps.com/api/v1/"
     var mToken = ""
+
     private val moshi = Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
     private val builder =
         Retrofit.Builder().baseUrl(URL).addConverterFactory(MoshiConverterFactory.create(moshi))

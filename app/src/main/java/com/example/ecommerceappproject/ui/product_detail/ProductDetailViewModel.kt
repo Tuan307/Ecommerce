@@ -17,10 +17,21 @@ class ProductDetailViewModel() : ViewModel() {
     val checkAddToCart: LiveData<Boolean>
         get() = _checkAddToCart
 
+    private var _buyNowResponse: MutableLiveData<Boolean> = MutableLiveData()
+    val buyNowResponse: LiveData<Boolean>
+        get() = _buyNowResponse
+
     fun addToCart(addToCartRequest: AddToCartRequest) {
         viewModelScope.launch(Dispatchers.IO) {
             val result = api.addToCart(addToCartRequest)
             _checkAddToCart.postValue(result.body()?.message)
+        }
+    }
+
+    fun buyNow(addToCartRequest: AddToCartRequest) {
+        viewModelScope.launch(Dispatchers.IO) {
+            val result = api.addToCart(addToCartRequest)
+            _buyNowResponse.postValue(result.body()?.message)
         }
     }
 
