@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:navigationIcon="?attr/homeAsUpIndicator"
+            app:title="Địa chỉ giao hàng" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/toolbar"
+            android:layout_marginStart="@dimen/dp10"
+            android:layout_marginTop="@dimen/dp10"
+            android:layout_marginEnd="@dimen/dp10"
+            android:background="@drawable/bg_border_text_input_layout"
+            android:paddingTop="@dimen/dp3">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp10"
+                android:background="@null"
+                android:hint="Họ và tên"
+                android:inputType="text|textNoSuggestions"
+                android:paddingStart="@dimen/dp10"
+                android:paddingTop="@dimen/dp3"
+                android:paddingEnd="@dimen/dp10"
+                android:paddingBottom="@dimen/dp3"
+                android:textSize="@dimen/sp16" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/til_1"
+            android:layout_marginStart="@dimen/dp10"
+            android:layout_marginTop="@dimen/dp10"
+            android:layout_marginEnd="@dimen/dp10"
+            android:background="@drawable/bg_border_text_input_layout"
+            android:paddingTop="@dimen/dp3">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp10"
+                android:background="@null"
+                android:hint="Số điện thoại"
+                android:inputType="number|textNoSuggestions"
+                android:paddingStart="@dimen/dp10"
+                android:paddingTop="@dimen/dp3"
+                android:paddingEnd="@dimen/dp10"
+                android:paddingBottom="@dimen/dp3"
+                android:textSize="@dimen/sp16" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/til_2"
+            android:layout_marginStart="@dimen/dp10"
+            android:layout_marginTop="@dimen/dp10"
+            android:layout_marginEnd="@dimen/dp10"
+            android:background="@drawable/bg_border_text_input_layout"
+            android:paddingTop="@dimen/dp3">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtChiTiet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp10"
+                android:background="@null"
+                android:hint="Địa chỉ cụ thể"
+                android:inputType="text|textNoSuggestions"
+                android:paddingStart="@dimen/dp10"
+                android:paddingTop="@dimen/dp3"
+                android:paddingEnd="@dimen/dp10"
+                android:paddingBottom="@dimen/dp3"
+                android:textSize="@dimen/sp16" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/til_6"
+            android:layout_marginStart="@dimen/dp10"
+            android:layout_marginTop="@dimen/dp10"
+            android:text="Loại địa chỉ:"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp18" />
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv1"
+            android:layout_marginStart="@dimen/dp10"
+            android:layout_marginTop="@dimen/dp5"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp15"
+                android:text="Đơn Online" />
+
+            <RadioButton
+                android:id="@+id/office"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nhận tại cửa hàng" />
+        </RadioGroup>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnContinue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/dp10"
+            android:layout_marginTop="@dimen/dp10"
+            android:layout_marginEnd="@dimen/dp10"
+            android:layout_marginBottom="@dimen/dp10"
+            android:background="@drawable/bg_btn_blue"
+            android:text="Tiếp tục"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+</layout>

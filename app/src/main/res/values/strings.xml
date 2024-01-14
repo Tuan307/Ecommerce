@@ -1,0 +1,55 @@
+<resources>
+    <string name="app_name">EcommerceAppProject</string>
+    <string name="str_login">Đăng nhập</string>
+    <string name="str_password">Mật khẩu</string>
+    <string name="str_forgot">Quên mật khẩu?</string>
+    <string name="str_or_social">Hoặc đăng nhập bang mạng xã hội</string>
+    <string name="str_has_account"><![CDATA[Bạn chưa có tài khoản. <font color=#57BE89>Đăng kí</font>]]></string>
+    <string name="str_register">Đăng ký</string>
+    <string name="str_input">Vui lòng nhập đầy đủ thông tin bên dưới</string>
+    <string name="str_name">Họ tên</string>
+    <string name="str_input_first_name">Nhập tên...</string>
+    <string name="str_first_name">Nhập tên</string>
+    <string name="str_input_last_name">Nhập họ...</string>
+    <string name="str_last_name">Nhập họ</string>
+    <string name="str_input_email">Nhập email...</string>
+    <string name="str_input_phone">Nhập số điện thoại...</string>
+    <string name="str_input_pass">Nhập mật khẩu...</string>
+    <string name="str_input_account">Nhập tài khoản...</string>
+    <string name="str_memo_login">Ghi nhớ đăng nhập</string>
+    <string name="str_input_account_and_pass">Nhập tài khoản và mật khẩu của bạn</string>
+    <string name="account">Email</string>
+    <string name="password">Mật khẩu</string>
+    <string name="confirm_password">Nhập lại mật khẩu</string>
+    <string name="btn_sign_up">Đăng ký</string>
+    <string name="title_create_account">Đăng ký tài khoản</string>
+    <string name="title_search">Tìm kiếm</string>
+    <string name="strName">Tên</string>
+    <string name="list_product_added_into_cart">Giỏ hàng</string>
+    <string name="pay">Thanh toán</string>
+    <string name="strAddress">Địa chỉ cụ thể</string>
+    <string name="strMobilePhone">Số điện thoại</string>
+    <string name="strSaveAddress">Lưu thông tin</string>
+    <string name="address">Địa chỉ nơi ở hiện tại</string>
+    <string name="lastName">Họ</string>
+    <string name="firstName">Tên</string>
+    <string name="strHome">Trang Chủ</string>
+    <string name="strSearch">Tìm Kiếm</string>
+    <string name="strCategory">Danh Mục</string>
+    <string name="strAccount">Tài Khoản</string>
+    <string name="strOrder">Đơn hàng</string>
+    <string name="buy">Mua ngay</string>
+    <string name="product_name">Chó Corgi</string>
+    <string name="add_into_cart">Thêm vào giỏ hàng</string>
+    <string name="describe">Mô tả sản phẩm: %1$s</string>
+    <string name="price_product">Giá tiền: %1$dđ</string>
+    <string name="price_sale">Giảm giá: %1$dđ</string>
+    <string name="weight">Số lượng: size %1$s</string>
+    <string name="type_a_message">Type a message...</string>
+    <string name="strAddMoreImage">Thêm ảnh</string>
+    <string name="strPrice">Giá:</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

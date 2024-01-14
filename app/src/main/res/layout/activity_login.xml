@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".ui.login.LoginActivity">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/imgBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp32"
+            android:layout_marginTop="70dp"
+            android:elevation="@dimen/dp10"
+            app:cardBackgroundColor="@color/black"
+            app:cardElevation="@dimen/dp10"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_back"
+                android:visibility="gone" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/txtLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp32"
+            android:text="@string/str_login"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/sp24"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgBack"
+            app:layout_constraintVertical_bias="0.25" />
+
+        <TextView
+            android:id="@+id/txtInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp4"
+            android:text="@string/str_input_account_and_pass"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/sp14"
+            app:layout_constraintStart_toStartOf="@id/txtLogin"
+            app:layout_constraintTop_toBottomOf="@+id/txtLogin" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edtInputAccount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginTop="@dimen/dp20"
+            android:background="@drawable/bg_edt_input"
+            android:hint="@string/str_input_account"
+            android:paddingHorizontal="@dimen/dp12"
+            android:paddingVertical="@dimen/dp12"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtInput" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edtInputPassword"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginTop="@dimen/dp20"
+            android:background="@drawable/bg_edt_input"
+            android:hint="@string/str_input_pass"
+            android:inputType="textPassword"
+            android:paddingHorizontal="@dimen/dp12"
+            android:paddingVertical="@dimen/dp12"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtInputAccount" />
+
+        <CheckBox
+            android:id="@+id/cb_memo_login"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp32"
+            android:buttonTint="@color/colorBlack"
+            android:checked="true"
+            android:paddingStart="@dimen/dp8"
+            android:paddingTop="@dimen/dp12"
+            android:paddingBottom="@dimen/dp12"
+            android:text="@string/str_memo_login"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/sp14"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtInputPassword" />
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp32"
+            android:layout_marginTop="@dimen/dp32"
+            android:background="@drawable/bg_btn_blue"
+            android:text="@string/str_login"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp16"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/cb_memo_login" />
+
+        <TextView
+            android:id="@+id/tvRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tạo tài khoản"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/sp14"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnLogin"
+            app:layout_constraintVertical_bias="0.85" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

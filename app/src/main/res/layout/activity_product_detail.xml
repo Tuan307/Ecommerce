@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:navigationIcon="?attr/homeAsUpIndicator"
+            app:title="Chi tiết sản phẩm">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginEnd="@dimen/dp15">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imgCart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_cart" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvNumberProduct"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="@dimen/dp15"
+                    android:background="@drawable/bg_text_view_number_product"
+                    android:gravity="center"
+                    android:text="2"
+                    android:textColor="@color/white"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/rcvImageItem"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp250"
+            android:layout_below="@id/toolbar"
+            android:orientation="horizontal" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/name_product"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rcvImageItem"
+            android:layout_marginStart="@dimen/dp10"
+            android:layout_marginTop="@dimen/dp10"
+            android:text="@string/product_name"
+            android:textSize="@dimen/sp20" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/name_product"
+            android:layout_marginStart="@dimen/dp10"
+            android:layout_marginTop="@dimen/dp5"
+            android:textSize="@dimen/sp18"
+            android:text="Giá tiền: 10$" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/size"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/price"
+            android:textSize="@dimen/sp18"
+            android:layout_marginStart="@dimen/dp10"
+            android:text="Trọng lượng: 5kg" />
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_above="@+id/ll1"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/dp12"
+            android:layout_below="@id/size"
+            android:layout_marginStart="@dimen/dp10">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/describe"
+                android:layout_width="match_parent"
+                android:textSize="@dimen/sp18"
+                android:layout_height="match_parent"
+                android:text="Mô tả:" />
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/ll1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/dp10"
+            android:layout_marginEnd="@dimen/dp10"
+            android:layout_marginBottom="@dimen/dp20"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/add_into_cart"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp20"
+                android:layout_weight="1"
+                android:background="@drawable/bg_button_add_into_cart"
+                android:text="@string/add_into_cart"
+                android:textAllCaps="false" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_button_buy"
+                android:text="@string/buy"
+                android:textAllCaps="false" />
+        </LinearLayout>
+    </RelativeLayout>
+</layout>
